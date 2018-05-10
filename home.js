@@ -1,8 +1,8 @@
 $(document).ready(function() {
-			var NavY = $('.menu').offset().top;
+			let NavY = $('.menu').offset().top;
 			 
-			var stickyNav = function(){
-			var ScrollY = $(window).scrollTop();
+			let stickyNav = function(){
+			let ScrollY = $(window).scrollTop();
 				  
 			if (ScrollY > NavY) { 
 				$('.menu').addClass('sticky');
