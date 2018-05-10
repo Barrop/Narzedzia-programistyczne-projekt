@@ -62,7 +62,7 @@
 				<span class="bigtitle">Najbliższe egzaminy:</span> <br /> Narzędzia programistyczne - Wyrażenia regularne<br />
 				Data: 01.01.2020<br />
 				Godzina rozpoczęcia: 12:30<br />
-				Godzina	zakończenia: 13:30			
+				Godzina	zakończenia: 13:30
 			</div>
 			
 			<div id="footer">
@@ -73,30 +73,7 @@
 	</div>
 		
 		<script src="jquery-1.11.3.min.js" ></script>
-	
-		<script>
-
-			$(document).ready(function() {
-			var NavY = $('.menu').offset().top;
-			 
-			var stickyNav = function(){
-			var ScrollY = $(window).scrollTop();
-				  
-			if (ScrollY > NavY) { 
-				$('.menu').addClass('sticky');
-			} else {
-				$('.menu').removeClass('sticky'); 
-			}
-			};
-			 
-			stickyNav();
-			 
-			$(window).scroll(function() {
-				stickyNav();
-			});
-			});
-	
-		</script>
+		<script src="home.js"></script>
 
 </body>
 </html>
