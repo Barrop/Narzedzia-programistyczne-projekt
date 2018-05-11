@@ -1,6 +1,7 @@
 window.onscroll = () => {
 	stickyWindow();
 	}
+
 const menu = document.getElementById("menu");
 let sticky = menu.offsetTop;
 
