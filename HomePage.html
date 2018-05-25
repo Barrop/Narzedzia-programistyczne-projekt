@@ -1,6 +1,7 @@
 <!DOCTYPE HTML5>
 <html lang="pl">
 <head>
+
 	<meta charset="utf-8"/>
 	<title>Platforma do egzaminów</title>
 	<meta name="description" content="Strona służąca do dodawania egzaminów dla studentów UTP"/>
@@ -9,15 +10,19 @@
 	
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800i" rel="stylesheet">
 	<link rel="stylesheet" href="style.css" type="text/css"/>
+	<script type="text/javascript" src="timer.js"></script>
 	
 </head>
 
-<body>
+<body onload="timer();">
 	<div class="wrapper">
 		<div id="logo">
 			Platforma e-learningowa
 		</div>
 		
+		<div id="timer"></div>
+		
+		<div style="clear:both;"></div>
 		<div id="menu" class="menu">
 			<ol>
 				<li><a href="HomePage.html"><div id="option">Strona główna</div></a></li>

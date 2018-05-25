@@ -17,13 +17,23 @@ body
 #logo
 {
 	margin-bottom: 20px;
-	width: 100%;
+	width: 75%;
 	color: #ffffff;
 	font-size: 44px;
 	letter-spacing: 3px;
 	text-align: center;
 	padding: 10px 0;
-	
+	float: left;
+}
+#timer
+{
+	float: left;
+	width: 25%;
+	font-size: 32px;
+	letter-spacing: 3px;
+	text-align: center;
+	padding: 10px 0;
+	color: #ffffff;
 }
 .menu
 {
