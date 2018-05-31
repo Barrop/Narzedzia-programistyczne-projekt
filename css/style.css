@@ -1,6 +1,3 @@
-/**{
-	box-sizing: border-box;
-}*/
 body
 {
 	background-color: #404040;
@@ -13,7 +10,7 @@ body
 }
 #container
 {
-	width: 1000px;
+	width: 95%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -45,13 +42,14 @@ body
 	padding: 10px;
 	margin-top: 20px;
 	margin-bottom: 25px;
-	height: 170px;
+	height: auto;
+	width: 90%;
 }
 #topbarL
 {
 	float: left;
 	padding: 20px;
-	width: 138px;
+	width: 20%;
 	text-align: center;
 	border-right: 2px dotted #222222;
 }
@@ -59,14 +57,14 @@ body
 {
 	float: left;
 	padding: 20px;
-	width: 760px;
+	width: 70%;
 	font-size: 16px;
 	text-align: justify;
 }
 #sidebar
 {
 	float: left;
-	width: 148px;
+	width: 20%;
 	min-height: 620px;
 	padding: 20px;
 	background-color: lightgray;
@@ -78,7 +76,7 @@ body
 {
 	float: left;
 	padding: 40px;
-	width: 730px;
+	width: 70%;
 	background-color: #dedede;
 	min-height: 580px;
 	text-align: justify;
@@ -95,8 +93,9 @@ body
 {
 	color: #000000;
 	font-size: 15px;
-	height:25px;
+	height: auto;
 	padding: 10px;
+	width: 90%;
 	border-bottom: 2px dotted #444444;
 }
 .optionL:hover
@@ -125,11 +124,12 @@ body
 }
 ol
 {
-	margin: 0;
+	margin: 10px;
 	padding: 0;
+	width: 80%;
 	list-style-type: none;
 	font-size: 18px;
-	height: 35px;
+	height: auto;
 	line-height: 200%;
 	display: inline-block;
 }
