@@ -6,19 +6,21 @@
 	<meta name="description" content="Strona służąca do dodawania egzaminów dla studentów UTP"/>
 	<meta name="keywords" content="utp, egzamin, e-learning"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800i" rel="stylesheet">
-	<link rel="stylesheet" href="./css/style.css" type="text/css"/>
+
+	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+	<script type="text/javascript" src="script/timer.js"></script>
 	
 </head>
 
-<body>
+<body onload="timer();">
 	<div class="wrapper">
 		<div id="logo">
 			Platforma e-learningowa
 		</div>
-		
+		<div id="timer"></div>
+		<div style="clear:both;"></div>
 		<div id="menu" class="menu">
 			<ol>
 				<li><a href="HomePage.html"><div id="option">Strona główna</div></a></li>
@@ -42,7 +44,7 @@
 
 		<div id="topbar">
 			<div id="topbarL">
-				<img src="./img/logo.png"/>
+				<img src="img/logo.png"/>
 			</div>
 			<div id="topbarR">
 				<span class="bigtitle">Twórcy projektu:</span> <br /> <br />
@@ -83,8 +85,7 @@
 			
 		</div>
 	</div>
-	<script src="./script/home.js"></script>
-
+		<script src="script/home.js"></script>
 
 </body>
 </html>
