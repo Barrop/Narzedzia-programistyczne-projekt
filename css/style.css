@@ -25,6 +25,14 @@ body
 	padding: 10px 0;
 	float: left;
 }
+#pole
+{	
+	margin: 0px;
+	width: 512px;
+	height: 60px;
+}
+
+
 #timer
 {
 	float: left;
