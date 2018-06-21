@@ -18,3 +18,10 @@ function stickyWindow() {
     menu.classList.remove("sticky");
   }
 }
+
+const tabela = document.getElementById('test');
+const losowanie = document.getElementById('losowanie');
+
+losowanie.addEventListener('click', function (){
+	tabela.classList.remove("test");
+});

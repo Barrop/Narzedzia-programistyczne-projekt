@@ -32,6 +32,11 @@ body
 	height: 60px;
 }
 
+.test
+{
+	display: none;
+}
+
 
 #timer
 {
