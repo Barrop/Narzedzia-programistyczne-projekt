@@ -4,6 +4,13 @@ body
 	font-family: 'Open Sans', sans-serif;
 	margin: 0 !important;
 }
+
+textarea
+{
+	resize: none;
+}
+
+
 .wrapper
 {
 	width: 100%;
@@ -37,6 +44,12 @@ body
 	display: none;
 }
 
+#buttons
+{
+	text-align: center;
+	margin: 0 auto;
+ 	display: block;
+}
 
 #timer
 {
