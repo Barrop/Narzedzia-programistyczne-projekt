@@ -13,3 +13,4 @@ function stickyWindow() {
   menu.classList.remove("sticky");
   }
 }
+;
