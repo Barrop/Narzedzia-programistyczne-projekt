@@ -1,1 +1,0 @@
-# Narzedzia-programistyczne-projekt
