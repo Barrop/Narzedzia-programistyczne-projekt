@@ -136,6 +136,9 @@
 					</tr>
 					</tr>
 				</table>
+				<form action="student.php" method="post">
+	<input type="submit" name="end" value="Zakończ"/>
+</form>
 <?php
 	require_once "connect.php";
 	$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
@@ -152,32 +155,66 @@
 			echo "<input name='odpowiedz{$row['id']}' type='radio' />".$row['C']." ";  echo "<br>";
 			echo "<input name='odpowiedz{$row['id']}' type='radio' />".$row['D']." ";  echo "<br>";
 		}
-	mysqli_close($polaczenie);
+		$polaczenie->close();
+	}
+
+  // Show the radio button value, i.e. which one was checked when the form was sent
+ 
+
+	if(isset($_POST['end'])){
+		$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+		if($polaczenie->connect_errno!=0){
+			echo "Error: ".$polaczenie->connect_errno; 
+		}
+		else {
+			if (isset($_POST['odpowiedz1'])){
+			$odp1 = $_POST['odpowiedz1'];
+			$ins = "INSERT INTO odp_uzytkownicy (uzytkownik, Numer_pytania, odp) values ('dziala', 1, '$odp1')";
+			$result = mysqli_query($polaczenie,$ins);
+			$polaczenie->close();
+			}
+		}
 	}
 ?>
-<form action="ocena.php" method="post">
-	<input type="submit" name="end" value="Zakończ"/>
-</form>
-<?php
 
-function sendValues()
-{
-   require_once "connect.php";
-	$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+
+
+<?php
+	/*if ($polaczenie->query($ins) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $ins . "<br>" . $polaczenie->error;
+}*/
+
+
+
+	/*$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 	if($polaczenie->connect_errno!=0)
 	{
 		echo "Error: ".$polaczenie->connect_errno; 
 	}
 	else {
-
+		if(isset($_POST["odpowiedz{${'id'}"])){
+			$odpowiedz . ${'id'} = $_POST["odpowiedz{$row['id']}"];
+		}
+		else{
+			$odpowiedz . ${'id'} = NULL;
+		}
+	if ($odpowiedz . ${'id'} != NULL)
+		{
+		 $ins = @mysql_query("INSERT INTO odp_uzytkownicy SET uzytkownik='login', Numer_pytania='${"id"}', odp=$odpowiedz . ${'id'}"); 
+		 if($ins) echo "Rekord został dodany poprawnie"; 
+    	else echo "Błąd nie udało się dodać nowego rekordu";
+		mysqli_close($polaczenie);
+		}
+		else{
+			echo "Wybierz odpowiedzi";
+		}
 	}
-}
-
-if(array_key_exists('end',$_POST)){
-   sendValues();
-}
-
+*/
 ?>
+
+
 				
 				<a href="ocena.php"><button id="zakoncz" type="button" class="buttons test">Zakończ</button></a>
 			</div>
