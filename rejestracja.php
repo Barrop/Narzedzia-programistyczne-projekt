@@ -147,14 +147,22 @@
 		color:red;
 		margin-top: 10px;
 		margin-bottom: 10px;
-		margin-left: 154px;
+		margin-left: 110px;
 	}
 	</style>
-	
 </head>
 
 <body onload="timer();">
 	<div class="wrapper">
+		<style>
+			#timer{
+				font-size: 25px;
+				margin-left: 640px;
+			}
+			#logo{
+				margin-left: 210px;
+			}
+		</style>
 		<div id="logo">
 			Platforma e-learningowa
 		</div>
@@ -178,17 +186,19 @@
 					<div id="content" >
 						<style>
 							#content {
-								margin-left: 100px;
+								margin-left: 193px;
 								margin-right: 100px;
 								border-top-right-radius: 10px;
-								border-bottom-right-radius: 10px;
+								border-bottom-left-radius: 10px;
 								border-top-left-radius: 10px;
 								border-bottom-right-radius: 10px;
+								min-height: 230px;
+								width: 555px;
 							}
 						</style>
 						<style>
 							input{
-								margin-left: 154px;
+								margin-left: 75px;
 								height: 40px;
 								width: 400px;
 							}
@@ -229,7 +239,7 @@
 						<br/> <input type="password" name="haslo2" placeholder="Powtórz hasło" /> <br />
 						<style>
 							.g-recaptcha{
-								margin-left: 202px;
+								margin-left: 125px;
 								margin-top: 20px;
 								width: 300px;
 							}
@@ -250,12 +260,11 @@
 								display: block;
 								height: 32px; 
 								border: none;
-								margin-left: 300px;
+								margin-left: 220px;
 								margin-top: 20px;
 								background-color: #404040;
 								color: #fff;
 								font-family: arial;
-
 							}
 							button:hover{
 								cursor: pointer;
@@ -267,13 +276,16 @@
 						<br/>
 						<style>
 							a{
-								margin-left: 320px;
+								margin-left: 238px;
 								text-decoration: none;
 							}
 						</style>
 						<a href="index.php">Powrót</a>
 					</div>
 				</form>
+			</div>
+			<div id="footer">
+				Platforma e-learningowa w sieci od 2018r &copy
 			</div>
 	</div>
 		<script src="scriptjquery-1.11.3.min.js" ></script>

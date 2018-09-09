@@ -30,6 +30,15 @@
 
 <body onload="timer();">
 	<div class="wrapper">
+		<style>
+			#timer{
+				font-size: 25px;
+				margin-left: 640px;
+			}
+			#logo{
+				margin-left: 210px;
+			}
+		</style>
 		<div id="logo">
 			Platforma e-learningowa
 		</div>
@@ -54,11 +63,12 @@
 						margin-left: 100px;
 						margin-right: 100px;
 						border-top-right-radius: 10px;
-						border-bottom-right-radius: 10px;
+						border-bottom-left-radius: 10px;
 						border-top-left-radius: 10px;
 						border-bottom-right-radius: 10px;
 						font-family: arial;
 						font-size: 25px;
+						min-height: 215px;
 					}
 				</style>
 				Dziękujemy za rejestrację w naszej platformie e-learningowej! Możesz już zalogować się na swoje konto! <br /> <br />
