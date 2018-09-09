@@ -1,3 +1,14 @@
+﻿<?php
+
+	session_start();
+
+	if(!isset($_SESSION['zalogowany']))
+	{
+		header('Location: index.php');
+		exit();
+	}
+?>	
+
 <!DOCTYPE HTML5>
 <html lang="pl">
 <head>
@@ -25,20 +36,19 @@
 		<div style="clear:both;"></div>
 		<div id="menu" class="menu">
 			<ol>
-				<li><a href="HomePage.html"><div id="option">Strona główna</div></a></li>
-				<li><a href="egzaminator.html"><div id="option">Dla egzaminatora</div></a>
+				<li><a href="egzaminator.php"><div id="option">Dla egzaminatora</div></a>
 					<ul>
-						<li><a href="egzaminE.html"><div id="option">Egzaminy</div></a></li>
-						<li><a href="ocenyE.html"><div id="option">Ocenianie</div></a></li>
+						<li><a href="egzaminE.php"><div id="option">Egzaminy</div></a></li>
+						<li><a href="ocenyE.php"><div id="option">Ocenianie</div></a></li>
 					</ul>
 				</li>
-				<li><a href="student.html"><div id="option">Dla studenta</div></a>
+				<li><a href="student.php"><div id="option">Dla studenta</div></a>
 					<ul>
-						<li><a href="egzaminS.html"><div id="option">Egzaminy</div></a></li>
-						<li><a href="ocenyS.html"><div id="option">Oceny</div></a></li>
+						<li><a href="egzaminS.php"><div id="option">Egzaminy</div></a></li>
+						<li><a href="ocenyS.php"><div id="option">Oceny</div></a></li>
 					</ul>
 				</li>
-				<li><a href="kontakt.html"><div id="option">Kontakt</div></a></li>
+				<li><a href="kontakt.php"><div id="option">Kontakt</div></a></li>
 			</ol>
 		</div>
 		
@@ -56,10 +66,13 @@
 		</div>
 		
 			<div id="sidebar">
-				<a href="HomePage.html" class="tilelink"><div class="optionL">Strona głowna</div></a>
-				<a href="egzaminator.html" class="tilelink"><div class="optionL">Dla egzaminatora</div></a>
-				<a href="student.html" class="tilelink"><div class="optionL">Dla studenta</div></a>
-				<a href="kontakt.html" class="tilelink"><div class="optionL">Kontakt</div></a>
+<?php
+	echo "<p>Witaj ".$_SESSION['login'].'! [<a href="logout.php">Wyloguj się!</a>]</p>';
+	echo "<p><b>Email:</b> ".$_SESSION['email'];
+?>
+				<a href="egzaminator.php" class="tilelink"><div class="optionL">Dla egzaminatora</div></a>
+				<a href="student.php" class="tilelink"><div class="optionL">Dla studenta</div></a>
+				<a href="kontakt.php" class="tilelink"><div class="optionL">Kontakt</div></a>
 				<div style="clear:both;"></div>
 			</div>
 		
@@ -76,7 +89,8 @@
 			</div>
 			
 		</div>
-	</div>
+	</div>	
+		<script src="scriptjquery-1.11.3.min.js" ></script>
 		<script src="script/home.js"></script>
 
 </body>
