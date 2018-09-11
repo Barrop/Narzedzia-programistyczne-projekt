@@ -95,7 +95,7 @@
 			echo "<li>".$row['B']." "; echo "</li>";
 			echo "<li>".$row['C']." "; echo "</li>";
 			echo "<li>".$row['D']." "; echo "</li>";
-			echo "<p>".$row['Poprawna']." "; echo "</p>";
+			echo "<p>Poprawna odpowiedź: ".$row['Poprawna']." "; echo "</p>";
 			echo "</ul>";
 		}
 		$polaczenie->close();
