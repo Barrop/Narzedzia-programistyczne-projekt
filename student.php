@@ -78,71 +78,8 @@
 				}
 			</style>
 			<div id="content">
-			<table id="test" class="test" width="700" border="1">
-					<tr>
-					<td>Numer pytania</td>
-					<td>Pytanie</td>
-					<td>Punkty</td>
-					</tr>
-					<tr>
-					<td>1</td>
-					<td>Co to są testy jednostkowe i po co się je stosuje.</td>
-					<td>3</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>
-						<textarea id ="pole"></textarea>
-					</td>
-					</tr>
-					<tr>
-					<td>10</td>
-					<td>Wymienić min. 10 popularnych projektów open source.</td>
-					<td>4</td>
-					<tr>
-						<td></td>
-						<td>
-						<textarea id ="pole"></textarea>
-					</td>
-					</tr>
-					</tr>
-					<tr>
-					<td>17</td>
-					<td>Kiedy warto stosować docker-compose, a kiedy nie?</td>
-					<td>2</td>
-					<tr>
-						<td></td>
-						<td>
-						<textarea id ="pole"></textarea>
-					</td>
-					</tr>
-					</tr>
-					<tr>
-					<td>6</td>
-					<td>Do czego służą następujące polecenia: git push i git pull.</td>
-					<td>3</td>
-					<tr>
-						<td></td>
-						<td>
-						<textarea id ="pole"></textarea>
-					</td>
-					</tr>
-					</tr>
-					<tr>
-					<td>8</td>
-					<td>Co jest sprawdzane przy pomocy testów jednostkowych?</td>
-					<td>3</td>
-					<tr>
-						<td></td>
-						<td>
-						<textarea id ="pole"></textarea>
-					</td>
-					</tr>
-					</tr>
-				</table>
-				<form action="student.php" method="post">	
-
-</form>
+	<form action="student.php" method="post">	
+	</form>
 <?php
 	require_once "connect.php";
 	$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
@@ -151,21 +88,24 @@
 		echo "Error: ".$polaczenie->connect_errno; 
 	}
 	else {
+		if (!mysqli_set_charset($polaczenie, "utf8")) {
+    		printf("Error loading character set utf8: %s\n", mysqli_error($polaczenie));
+			} 		
+		else {
+    		printf("", mysqli_character_set_name($polaczenie));
+			}
 		$wynik = mysqli_query($polaczenie,"SELECT * FROM egzamin");
 		while($row = mysqli_fetch_array($wynik)){
 			echo $row['pytanie'] ; echo "<br>";
 			echo "<input name='odpowiedz{$row['id']}' type='radio' />".$row['A']." ";  echo "<br>";
 			echo "<input name='odpowiedz{$row['id']}' type='radio' />".$row['B']." ";  echo "<br>";
 			echo "<input name='odpowiedz{$row['id']}' type='radio' />".$row['C']." ";  echo "<br>";
-			echo "<input name='odpowiedz{$row['id']}' type='radio' />".$row['D']." ";  echo "<br>";
+			echo "<input name='odpowiedz{$row['id']}' type='radio' />".$row['D']." ";  echo "<br><br>";
 		}
 		$polaczenie->close();
 	}
 
-  // Show the radio button value, i.e. which one was checked when the form was sent
- 
-
-	if(isset($_POST['end'])){
+	/*if(isset($_POST['end'])){
 		$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 		if($polaczenie->connect_errno!=0){
 			echo "Error: ".$polaczenie->connect_errno; 
@@ -178,44 +118,7 @@
 			$polaczenie->close();
 			}
 		}
-	}
-?>
-
-
-
-<?php
-	/*if ($polaczenie->query($ins) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $ins . "<br>" . $polaczenie->error;
-}*/
-
-
-
-	/*$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
-	if($polaczenie->connect_errno!=0)
-	{
-		echo "Error: ".$polaczenie->connect_errno; 
-	}
-	else {
-		if(isset($_POST["odpowiedz{${'id'}"])){
-			$odpowiedz . ${'id'} = $_POST["odpowiedz{$row['id']}"];
-		}
-		else{
-			$odpowiedz . ${'id'} = NULL;
-		}
-	if ($odpowiedz . ${'id'} != NULL)
-		{
-		 $ins = @mysql_query("INSERT INTO odp_uzytkownicy SET uzytkownik='login', Numer_pytania='${"id"}', odp=$odpowiedz . ${'id'}"); 
-		 if($ins) echo "Rekord został dodany poprawnie"; 
-    	else echo "Błąd nie udało się dodać nowego rekordu";
-		mysqli_close($polaczenie);
-		}
-		else{
-			echo "Wybierz odpowiedzi";
-		}
-	}
-*/
+	}*/
 ?>
 
 			<style>

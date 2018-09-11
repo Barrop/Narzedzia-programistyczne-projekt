@@ -74,72 +74,49 @@
 			</div>
 		
 			<div id="content">
-			<table id="test" width="700" border="1">
-					<tr>
-					<td>Numer pytania</td>
-					<td>Pytanie</td>
-					<td>Punkty</td>
-					</tr>
-					<tr>
-					<td>1</td>
-					<td>Co to są testy jednostkowe i po co się je stosuje.</td>
-					<td><input type="text" value="3"/></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>
-						<textarea id ="pole">Test jednostkowy służy do sprawdzenia pojedynczej jednostki kodu.Jego zadaniem jest weryfikacja (bez ingerencji programisty), czy testowany kod działa poprawnie.
-						</textarea>
-					</td>
-					</tr>
-					<tr>
-					<td>10</td>
-					<td>Wymienić min. 10 popularnych projektów open source.</td>
-					<td><input type="text" value="1"/></td>
-					<tr>
-						<td></td>
-						<td>
-						<textarea id ="pole">Blender, DSpace, Gimp, Firefox, PHP, Perl, Python, Plone, MySQL, Moodle</textarea>
-					</td>
-					</tr>
-					</tr>
-					<tr>
-					<td>17</td>
-					<td>Kiedy warto stosować docker-compose, a kiedy nie?</td>
-					<td><input type="text" value="2"/></td>
-					<tr>
-						<td></td>
-						<td>
-						<textarea id ="pole">Docker-compose warto stosować wtedy, kiedy chcemy utworzyć obraz aplikacji wielokontenerowej, natomiast nie warto go stosować przy tworzeniu prostych aplikacji jednokontenerowych.</textarea>
-					</td>
-					</tr>
-					</tr>
-					<tr>
-					<td>6</td>
-					<td>Do czego służą następujące polecenia: git push i git pull.</td>
-					<td><input type="text" value="2"/></td>
-					<tr>
-						<td></td>
-						<td>
-						<textarea id ="pole">Git push – Wysłanie zmodyfikowanego repozytorium na jedną z gałęzi głównego repozytorium.
-					Git pull – Pobiera ostatnie zmiany w repozytorium i od razu je stosuje (łączny = merguje)
-						</textarea>
-					</td>
-					</tr>
-					</tr>
-					<tr>
-					<td>8</td>
-					<td>Co jest sprawdzane przy pomocy testów jednostkowych?</td>
-					<td><input type="text" value="4"/></td>
-					<tr>
-						<td></td>
-						<td>
-						<textarea id ="pole">Sprawdzane jest czy testowany kod działa poprawnie.</textarea>
-					</td>
-					</tr>
-					</tr>
-				</table>
-				<button id="zakoncz" type="button" class="buttons">Zakończ</button>
+				<?php
+				require_once "connect.php";
+	$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+	if($polaczenie->connect_errno!=0)
+	{
+		echo "Error: ".$polaczenie->connect_errno; 
+	}
+	else {
+		if (!mysqli_set_charset($polaczenie, "utf8")) {
+    		printf("Error loading character set utf8: %s\n", mysqli_error($polaczenie));
+			} 		
+		else {
+    		printf("", mysqli_character_set_name($polaczenie));
+			}
+		$wynik = mysqli_query($polaczenie,"SELECT * FROM egzamin");
+		while($row = mysqli_fetch_array($wynik)){
+			echo $row['pytanie'] ; echo "<br><ul>";
+			echo "<li>".$row['A']." "; echo "</li>";
+			echo "<li>".$row['B']." "; echo "</li>";
+			echo "<li>".$row['C']." "; echo "</li>";
+			echo "<li>".$row['D']." "; echo "</li>";
+			echo "<p>".$row['Poprawna']." "; echo "</p>";
+			echo "</ul>";
+		}
+		$polaczenie->close();
+	}
+	?>
+	<style>
+				button{
+					display: block;
+					height: 32px; 
+					border: none;
+					margin-left: 285px;
+					background-color: #404040;
+					color: #fff;
+					font-family: arial;
+				}
+				button:hover{
+					cursor: pointer;
+					background-color: #303030;
+				}
+			</style>
+				<a href="index.php"><button id="zakoncz" type="button" class="buttons">Przejdź do strony głównej</button></a>
 			</div>
 			
 
